@@ -135,7 +135,7 @@ case "$1" in
     status
     code=$?
     if [ $code -eq 0 ]; then
-      echo "$name is already running"
+      echo "$name [pid `cat "$pidfile"`] is already running"
     else
       start
       code=$?
@@ -148,7 +148,7 @@ case "$1" in
     status
     code=$?
     if [ $code -eq 0 ] ; then
-      echo "$name is running"
+      echo "$name [pid `cat "$pidfile"`] is running"
     else
       echo "$name is not running"
     fi
